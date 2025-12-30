@@ -158,10 +158,10 @@ anti-collision-radar-uav/
 - David Thiel - Technical supervision
 - Will Sutton - PCB design and fabrication
 
- 📄 License
+  License
 This project is part of academic research. Please cite appropriately if used for reference.
 
- 🔮 Future Work
+ Future Work
 1. Frequency Tuning: Adjust capacitive hat dimensions for 1060MHz resonance
 2. F/B Ratio Improvement: Optimize spacing and parasitic element tuning
 3. Multi-band Design: Expand frequency range for broader applications
