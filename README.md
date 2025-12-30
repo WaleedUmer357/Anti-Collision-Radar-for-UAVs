@@ -116,7 +116,7 @@ This project focuses on the design, simulation, and experimental validation of a
 4. Ground Plane Size: Impact on radiation pattern
 
   Project Structure
-
+```
 anti-collision-radar-uav/
 ├── README.md
 ├── docs/
@@ -139,7 +139,7 @@ anti-collision-radar-uav/
     ├── pcb_layout.png
     ├── antenna_models.jpg
     └── measurement_setup.jpg
-
+```
   Applications
 - UAV Anti-Collision Systems: Compact directional antennas for radar
 - Aerial Communication: Directional links for UAV swarms
