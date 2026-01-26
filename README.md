@@ -1,173 +1,228 @@
- Anti-Collision-Radar-for-UAVs
-Project done in collaboration with Micron Avionics on their new light weight and cheap radar design that will be mounted on UAVs.
- Anti-Collision Radar for UAVs: Capacitive Hat Monopole Antenna Array
 
- Project Overview
-This project focuses on the design, simulation, and experimental validation of a quad monopole antenna array integrated into a PCB for UAV (Unmanned Aerial Vehicle) anti-collision radar applications. The design employs capacitive hat monopole antennas to reduce physical antenna height while maintaining electrical performance at 1060MHz. The array consists of one active feed antenna and three passive parasitic elements to enhance directivity and front-to-back ratio.
+<h1>Anti-Collision Radar for UAVs</h1>
 
-  Objectives
-- Design a compact monopole antenna array operating at 1060MHz for UAV applications
-- Reduce antenna height using capacitive hats while maintaining quarter-wavelength electrical performance
-- Improve directivity and front-to-back ratio using parasitic elements
-- Validate design through simulation (NECWinPro) and physical measurement (VNA)
+<p>
+  <strong>Collaborators:</strong> Micron Avionics<br>
+  <strong>Focus:</strong> Lightweight, low-cost radar antenna system for UAV anti-collision applications
+</p>
 
-  Technical Specifications
-| Parameter | Value |
-|-----------|-------|
-| Operating Frequency | 1060 MHz (design), 889 MHz (achieved) |
-| Wavelength (λ) | 0.282 m |
-| Quarter Wavelength | 0.070 m |
-| Antenna Height | λ/8 = 0.035 m |
-| PCB Type | Double-sided with ground planes |
-| Feed Impedance | 50 Ω |
-| Antenna Configuration | 1 active + 3 parasitic monopoles |
-| Capacitive Hat Type | Wire and rectangular patch variants |
+<div class="badge">RF Engineering</div>
+<div class="badge">Antenna Design</div>
+<div class="badge">UAV Systems</div>
+<div class="badge">PCB Integration</div>
 
-  Antenna Design
+<hr>
 
- Key Formulas
-- Wavelength: \( \lambda = \frac{c}{f} = 0.282\text{m} \)
-- Quarter Wavelength: \( \frac{\lambda}{4} = 0.070\text{m} \)
-- Monopole Height: \( M = \frac{\lambda}{8} = 0.035\text{m} \)
-- Reflection Coefficient: \( \Gamma = \frac{Z_L - Z_0}{Z_L + Z_0} \)
-- Return Loss: \( Gain = -20 \log|\Gamma| \)
+<h2>📡 Project Overview</h2>
 
- Design Features
-1. Capacitive Hats: Extend electrical length without increasing physical height
-2. Quad Array Configuration: One driven element + three parasitic elements
-3. Symmetrical PCB Layout: All antennas equidistant from PCB edges
-4. Ground Planes: Both top and bottom layers for improved radiation efficiency
+<p>
+This project presents the design, simulation, and experimental validation of a
+<strong>quad monopole antenna array</strong> integrated into a PCB for UAV anti-collision radar systems.
+The design operates near <strong>1060&nbsp;MHz</strong> and employs <strong>capacitive hat monopole antennas</strong>
+to significantly reduce physical antenna height while maintaining acceptable electrical performance.
+</p>
 
-  Experimental Setup
+<p>
+The antenna array consists of <strong>one active driven element</strong> and
+<strong>three passive parasitic elements</strong> to improve directivity and front-to-back ratio.
+</p>
 
- Hardware Components
-- PCB: Custom-designed square board with specific hole sizes
-  - Feed antenna hole: 2.35mm diameter
-  - Parasitic antenna holes: 2.45mm diameter
-- Antenna Types:
-  1. Wire capacitive hat monopoles
-  2. Rectangular copper patch capacitive hat monopoles
-- Measurement Equipment:
-  - Voltage Network Analyzer (VNA)
-  - Dream Catcher software
-  - NECWinPro for simulation
+<hr>
 
- PCB Layout
-```
-┌─────────────────┐
-│  ●       ●      │
-│                 │
-│                 │
-│  ●       ●      │
-└─────────────────┘
-● = Antenna positions (equidistant spacing)
-```
+<h2>🎯 Objectives</h2>
 
-  Results
+<ul>
+  <li>Design a compact monopole antenna array for UAV-mounted radar systems</li>
+  <li>Reduce antenna height using capacitive hat techniques</li>
+  <li>Enhance directivity and front-to-back ratio using parasitic elements</li>
+  <li>Validate results through NECWinPro simulations and VNA measurements</li>
+</ul>
 
- Simulation Results (NECWinPro)
-- VSWR: 2.68 dB at 1060MHz
-- Front-to-Back Ratio: 8 dB (simulated)
-- Directivity: Principal beam oriented toward feed antenna
+<hr>
 
- Experimental Results
-| Measurement | Value |
-|-------------|-------|
-| Resonance Frequency | 889 MHz |
-| S11 at Resonance | -3.89 dB |
-| Front-to-Back Ratio | 6 dB (experimental) |
-| Beamwidth | 180° |
-| Gain | ~12 dB (with minor calibration ripples) |
+<h2>⚙️ Technical Specifications</h2>
 
- Radiation Patterns
-- Directivity: Enhanced in feed antenna direction
-- Beamwidth: 180° half-power beamwidth
-- Pattern: Directional with reduced backward radiation
+<table>
+  <tr><th>Parameter</th><th>Value</th></tr>
+  <tr><td>Operating Frequency</td><td>1060&nbsp;MHz (design), 889&nbsp;MHz (measured)</td></tr>
+  <tr><td>Wavelength (λ)</td><td>0.282&nbsp;m</td></tr>
+  <tr><td>Quarter Wavelength</td><td>0.070&nbsp;m</td></tr>
+  <tr><td>Antenna Height</td><td>λ/8 = 0.035&nbsp;m</td></tr>
+  <tr><td>PCB Type</td><td>Double-sided with ground planes</td></tr>
+  <tr><td>Feed Impedance</td><td>50&nbsp;Ω</td></tr>
+  <tr><td>Antenna Configuration</td><td>1 active + 3 parasitic monopoles</td></tr>
+  <tr><td>Capacitive Hat Type</td><td>Wire and rectangular copper patch</td></tr>
+</table>
 
-  Performance Comparison
+<hr>
 
- Achieved vs. Target
-| Parameter | Target | Achieved |
-|-----------|--------|----------|
-| Frequency | 1060 MHz | 889 MHz |
-| F/B Ratio | 12 dB | 6 dB |
-| VSWR | <2.0 dB | 2.68 dB |
-| Beamwidth | N/A | 180° |
+<h2>📐 Antenna Design</h2>
 
- Key Findings
-1. Height Reduction: Capacitive hats successfully reduced physical antenna height while maintaining performance
-2. Frequency Shift: Experimental resonance at 889MHz vs. design target of 1060MHz
-3. Directivity Improvement: Parasitic elements enhanced front-to-back ratio to 6dB
-4. Consistency: Both wire and patch capacitive hats resonated at same frequency
-5. Beam Steering: Principal beam successfully directed toward feed antenna
+<h3>Key Formulas</h3>
 
-  Design Considerations
+<pre>
+λ = c / f = 0.282 m
+λ / 4 = 0.070 m
+Monopole Height = λ / 8 = 0.035 m
 
- Simplifications Made
-- Dielectric effects omitted
-- Infinite ground plane assumption
-- Conduction losses ignored
-- Environmental conditions not considered
+Reflection Coefficient:
+Γ = (ZL − Z0) / (ZL + Z0)
 
- Optimization Opportunities
-1. Capacitive Hat Dimensions: Tuning for exact frequency matching
-2. Antenna Spacing: Optimizing for improved F/B ratio
-3. PCB Material: Considering dielectric properties
-4. Ground Plane Size: Impact on radiation pattern
+Return Loss:
+RL = −20 log10 |Γ|
+</pre>
 
-  Project Structure
-```
+<h3>Design Features</h3>
+
+<ul>
+  <li>Capacitive hats used to extend electrical length without increasing height</li>
+  <li>Quad monopole array for directional radiation</li>
+  <li>Symmetrical PCB layout with equidistant antenna placement</li>
+  <li>Dual ground planes for improved radiation efficiency</li>
+</ul>
+
+<hr>
+
+<h2>🧪 Experimental Setup</h2>
+
+<h3>Hardware</h3>
+
+<ul>
+  <li>Custom square PCB with integrated ground planes</li>
+  <li>Feed antenna hole: 2.35&nbsp;mm diameter</li>
+  <li>Parasitic antenna holes: 2.45&nbsp;mm diameter</li>
+  <li>Wire and copper patch capacitive hat monopoles</li>
+</ul>
+
+<h3>Measurement Tools</h3>
+
+<ul>
+  <li>Vector Network Analyzer (VNA)</li>
+  <li>Dream Catcher measurement software</li>
+  <li>NECWinPro for electromagnetic simulation</li>
+</ul>
+
+<hr>
+
+<h2>📊 Results</h2>
+
+<h3>Simulation Results (NECWinPro)</h3>
+
+<ul>
+  <li>VSWR: 2.68&nbsp;dB at 1060&nbsp;MHz</li>
+  <li>Front-to-Back Ratio: 8&nbsp;dB</li>
+  <li>Directional beam aligned with driven element</li>
+</ul>
+
+<h3>Experimental Results</h3>
+
+<table>
+  <tr><th>Metric</th><th>Measured Value</th></tr>
+  <tr><td>Resonance Frequency</td><td>889&nbsp;MHz</td></tr>
+  <tr><td>S11 at Resonance</td><td>-3.89&nbsp;dB</td></tr>
+  <tr><td>Front-to-Back Ratio</td><td>6&nbsp;dB</td></tr>
+  <tr><td>Beamwidth</td><td>180°</td></tr>
+  <tr><td>Gain</td><td>~12&nbsp;dB</td></tr>
+</table>
+
+<hr>
+
+<h2>📈 Performance Comparison</h2>
+
+<table>
+  <tr><th>Parameter</th><th>Target</th><th>Achieved</th></tr>
+  <tr><td>Operating Frequency</td><td>1060&nbsp;MHz</td><td>889&nbsp;MHz</td></tr>
+  <tr><td>Front-to-Back Ratio</td><td>12&nbsp;dB</td><td>6&nbsp;dB</td></tr>
+  <tr><td>VSWR</td><td>&lt; 2.0</td><td>2.68</td></tr>
+  <tr><td>Beamwidth</td><td>N/A</td><td>180°</td></tr>
+</table>
+
+<hr>
+
+<h2>🧠 Key Findings</h2>
+
+<ul>
+  <li>Capacitive hats effectively reduced antenna height</li>
+  <li>Parasitic elements improved directional performance</li>
+  <li>Measured resonance shifted due to simplified modeling assumptions</li>
+  <li>Wire and patch capacitive hats showed consistent resonance behavior</li>
+</ul>
+
+<hr>
+
+<h2>📂 Project Structure</h2>
+
+<pre>
 anti-collision-radar-uav/
-├── README.md
 ├── docs/
-│   ├── technical_report.pdf
-│   ├── pcb_specifications.pdf
-│   └── measurement_protocol.pdf
 ├── simulations/
-│   ├── necwinpro_files/
-│   ├── radiation_patterns/
-│   └── impedance_analysis/
 ├── hardware/
-│   ├── pcb_design/
-│   ├── bom.md
-│   └── assembly_instructions.md
 ├── measurements/
-│   ├── vna_data/
-│   ├── radiation_patterns/
-│   └── calibration_data/
 └── images/
-    ├── pcb_layout.png
-    ├── antenna_models.jpg
-    └── measurement_setup.jpg
-```
-  Applications
-- UAV Anti-Collision Systems: Compact directional antennas for radar
-- Aerial Communication: Directional links for UAV swarms
-- RF Sensing: Directional signal detection and monitoring
-- Compact Radar Systems: Where antenna height is constrained
+</pre>
 
-  References
-1. Balanis, C. A. (2005). Antenna Theory: Analysis and Design
-2. Pozar, D. M. (2011). Microwave Engineering
-3. Thiel, D. V., & Smith, S. (2002). Switched Parasitic Antennas for Cellular Communication
-4. Johnson, R. C., & Jasik, H. (1984). Antenna Engineering Handbook
+<hr>
 
- 👥 Contributors
-- Waleed Umer (5336317) - Design, simulation, and experimental validation
-- Francis Mensah - Project partner
-- David Thiel - Technical supervision
-- Will Sutton - PCB design and fabrication
+<hr>
 
-  License
-This project is part of academic research. Please cite appropriately if used for reference.
+<h2>🖼️ Project Visuals</h2>
 
- Future Work
-1. Frequency Tuning: Adjust capacitive hat dimensions for 1060MHz resonance
-2. F/B Ratio Improvement: Optimize spacing and parasitic element tuning
-3. Multi-band Design: Expand frequency range for broader applications
-4. Integration Testing: Test with actual UAV radar systems
-5. Environmental Testing: Evaluate performance under real-world conditions
+<h3>Directivity Profile</h3>
+<img src="Directivity Profile_Hat_Monopole.png" alt="Directivity Profile_Hat_Monopole" style="width:100%; max-width:800px;">
 
----
+<h3>Antenna Array Assembly</h3>
+<p>
+Physical implementation of the capacitive hat monopole antennas, showing
+the driven element and three parasitic elements.
+</p>
+<img src="Top_hat_monopole_array.png" alt="Top_hat_monopole_array" style="width:100%; max-width:800px;">
 
-This project demonstrates the successful application of capacitive hat monopole technology to create compact, directional antenna arrays suitable for UAV anti-collision radar systems. While some performance targets were not fully met, the design shows promising results and provides a foundation for further optimization.
+<h3>Nec_win_pro_hat_monopole</h3>
+
+<img src="Nec_win_pro_hat_monopole.png" alt="Nec_win_pro_hat_monopole" style="width:100%; max-width:800px;">
+
+<h2>🚀 Applications</h2>
+
+<ul>
+  <li>UAV anti-collision radar systems</li>
+  <li>Directional RF sensing</li>
+  <li>Compact airborne radar platforms</li>
+  <li>UAV swarm communication</li>
+</ul>
+
+<hr>
+
+<h2>👥 Contributors</h2>
+
+<ul>
+  <li><strong>Waleed Umer</strong> – Design, simulation, and experimental validation</li>
+  <li>Francis Mensah – Project partner</li>
+  <li>David Thiel – Technical supervision</li>
+  <li>Will Sutton – PCB design and fabrication</li>
+</ul>
+
+<hr>
+
+<h2>🔮 Future Work</h2>
+
+<ul>
+  <li>Frequency tuning for 1060&nbsp;MHz resonance</li>
+  <li>Optimisation of parasitic element spacing</li>
+  <li>Multi-band antenna development</li>
+  <li>Integration with operational UAV radar systems</li>
+  <li>Environmental and in-flight testing</li>
+</ul>
+
+<hr>
+
+<h2>📚 References</h2>
+
+<ol>
+  <li>Balanis, C. A., <em>Antenna Theory</em></li>
+  <li>Pozar, D. M., <em>Microwave Engineering</em></li>
+  <li>Thiel & Smith, <em>Switched Parasitic Antennas</em></li>
+  <li>Johnson & Jasik, <em>Antenna Engineering Handbook</em></li>
+</ol>
+
+</body>
+</html>
